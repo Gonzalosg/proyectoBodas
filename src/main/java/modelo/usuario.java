@@ -11,7 +11,7 @@ public class usuario {
 	private String apellido2;
 	private String email;
 	private String fechaBoda;
-	private String contrasenia;
+	private String hashContrasenia;
 	private int permiso;
 	
 	public usuario() {
@@ -19,7 +19,7 @@ public class usuario {
 	}
 
 	public usuario(int id, String nombre, String apellido1, String apellido2, String email, String fechaBoda,
-			String contrasenia, int permiso) {
+			String hashContrasenia, int permiso) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -27,19 +27,19 @@ public class usuario {
 		this.apellido2 = apellido2;
 		this.email = email;
 		this.fechaBoda = fechaBoda;
-		this.contrasenia = contrasenia;
+		this.hashContrasenia = hashContrasenia;
 		this.permiso = permiso;
 	}
 
 	public usuario(String nombre, String apellido1, String apellido2, String email, String fechaBoda,
-			String contrasenia, int permiso) {
+			String hashContrasenia, int permiso) {
 		super();
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
 		this.email = email;
 		this.fechaBoda = fechaBoda;
-		this.contrasenia = contrasenia;
+		this.hashContrasenia = hashContrasenia;
 		this.permiso = permiso;
 	}
 	
@@ -99,12 +99,12 @@ public class usuario {
 		this.fechaBoda = fechaBoda;
 	}
 
-	public String getContrasenia() {
-		return contrasenia;
+	public String getHashContrasenia() {
+		return hashContrasenia;
 	}
 
-	public void setContrasenia(String contrasenia) {
-		this.contrasenia = contrasenia;
+	public void setHashContrasenia(String contrasenia) {
+		this.hashContrasenia = contrasenia;
 	}
 
 	public int getPermiso() {
@@ -118,7 +118,7 @@ public class usuario {
 	@Override
 	public String toString() {
 		return "usuario [id=" + id + ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2
-				+ ", email=" + email + ", fechaBoda=" + fechaBoda + ", contrasenia=" + contrasenia + ", permiso="
+				+ ", email=" + email + ", fechaBoda=" + fechaBoda + ", contrasenia=" + hashContrasenia + ", permiso="
 				+ permiso + "]";
 	}
 

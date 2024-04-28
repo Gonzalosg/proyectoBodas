@@ -36,13 +36,13 @@ public class daoUsuario {
 	
 	public void insertar(usuario u) throws SQLException {
 		
-		PreparedStatement ps = con.prepareStatement("INSERT INTO usuario(nombre,apellido1,apellido2,email,fechaBoda,contrasenia,permiso)VALUES(?,?,?,?,?,?,?)");
+		PreparedStatement ps = con.prepareStatement("INSERT INTO usuario(nombre,apellido1,apellido2,email,fechaBoda,hashContrasenia,permiso)VALUES(?,?,?,?,?,?,?)");
 		ps.setString(1,u.getNombre());
 		ps.setString(2,u.getApellido1());
 		ps.setString(3,u.getApellido2());
 		ps.setString(4,u.getEmail());
 		ps.setString(5,u.getFechaBoda());
-		ps.setString(6,u.getContrasenia());
+		ps.setString(6,u.getHashContrasenia());
 		ps.setInt(7,u.getPermiso());
 		
 		int filas = ps.executeUpdate();

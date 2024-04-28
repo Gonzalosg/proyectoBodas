@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/galeriaUsuarios.css">
+    
+    <script type="text/javascript">
+		
+		function llamada (){
+			fetch('adminRU')
+			.then(response => response.json())
+			.then(data=> pintarTabla(data))
+		}
+		
+		function pintarTabla(datos){
+		
+		let html = `
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido 1</th>
+                    <th>Apellido 2</th>
+                    <th>Email</th>
+                    <th>Fecha de Boda</th>
+                    <th>Permiso</th>
+                </tr>`;
+			
+		for (var i=0; i<datos.length;i++){
+			
+			html += "<tr><td>"+datos[i].id+"</td>"
+			html += "<td>"+datos[i].nombre+"</td>"
+			html += "<td>"+datos[i].apellido1+"</td>"
+			html += "<td>"+datos[i].apellido2+"</td>"
+			html += "<td>"+datos[i].email+"</td>"
+			html += "<td>"+datos[i].fechaBoda+"</td>"
+			html += "<td>"+datos[i].permiso+"</td>"
+			html += "<td><a href='adminUpdate?id="+datos[i].id+"&op=2'>Editar</a></td>"
+			
+			html += "</tr>"
+			
+		}
+		html +="</table>";
+	
+	document.getElementById("listado").innerHTML = html;	
+				
+		
+		}
+		
+		window.onload = function(){
+			llamada();
+		}
+	
+	
+	</script>
+</head>
+<body>
+    
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="home.html">Portfolio</a></li>
+                    <li><a href="home.html">Shop</a></li>
+                    <li><a href="Accede.html">Accede</a></li>
+                 
+                </ul>
+            </nav>
+        </header>
+
+<div class="title">
+            <img src="imagenes/Frameaframe_rojo.png" alt="frameAframe" width="20%" height="100%">
+
+</div>
+    
+    <h1>Lista Usuarios</h1>
+	<div id="listado">
+		
+	</div>
+
+
+
+</body>
+</html>

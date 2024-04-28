@@ -5,7 +5,11 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import modelo.usuario;
+
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
 
 /**
  * Servlet implementation class adminUpdate
@@ -25,8 +29,25 @@ import java.io.IOException;
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		PrintWriter out = response.getWriter();
+		int id = Integer.parseInt(request.getParameter("id"));
+		int opcion = Integer.parseInt(request.getParameter("op"));
+		
+		if(opcion==2) {
+			usuario u = new usuario();
+			try {
+				u.obtenerPorId(id);
+				out.print(u.dameJson());
+				System.out.println(u.toString());
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		
+		
 	}
 
 	/**
@@ -34,7 +55,7 @@ import java.io.IOException;
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 
 }

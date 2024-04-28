@@ -2,6 +2,8 @@ package modelo;
 
 import java.sql.SQLException;
 
+import com.google.gson.Gson;
+
 import dao.daoUsuario;
 
 public class usuario {
@@ -43,13 +45,35 @@ public class usuario {
 		this.permiso = permiso;
 	}
 	
-	public void insertar() throws SQLException {
+	public void insertar () throws SQLException {
 		
 		daoUsuario.getInstance().insertar(this);
-		
 	}
 	
 	
+	public void obtenerPorId(int id) throws SQLException {
+		
+		usuario aux = daoUsuario.getInstance().obtenerPorId(id);
+		
+		this.setId(aux.getId());
+		this.setNombre(aux.getNombre());
+		this.setApellido1(aux.getApellido1());
+		this.setApellido2(aux.getApellido2());
+		this.setEmail(aux.getEmail());
+		this.setFechaBoda(aux.getFechaBoda());
+		this.setHashContrasenia(aux.getHashContrasenia());
+		this.setPermiso(aux.getPermiso());
+	}
+	
+	public String dameJson () throws SQLException {
+		String json = "";
+		Gson gson = new Gson ();
+		
+		json = gson.toJson(this);
+		
+		
+		return json;
+	}
 
 	public int getId() {
 		return id;

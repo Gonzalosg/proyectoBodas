@@ -62,7 +62,7 @@ public class gestionUsuario extends HttpServlet {
 		    byte[] digest = md.digest();
 		    String myHash = new String(digest);
 		    usuario u = new usuario(nombre, apellido1, apellido2, email, fechaBoda,myHash, permiso);
-			System.out.println(u+ "Usuario creado");
+			
 			u.insertar();
 			System.out.println(u+" usuario insertado");
 		    

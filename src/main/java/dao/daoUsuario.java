@@ -66,19 +66,20 @@ public class daoUsuario {
 		return ls;
 	}
 	
-	public usuario update (int id) throws SQLException {
+	public usuario obtenerPorId(int id) throws SQLException {
 		
-		String sql = "SELECT * FROM usuario WHERE id=?";
+		String sql = "SELECT * FROM usuario where id=?";
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setInt(1, id);
+		ps.setInt(1,id);
 		
 		ResultSet rs = ps.executeQuery();
 		
 		rs.next();
+		
 		usuario u = new usuario(rs.getInt(1), rs.getString(2), rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7), rs.getInt(8));
 		
-		
 		return u;
+		
 	}
 	
 	

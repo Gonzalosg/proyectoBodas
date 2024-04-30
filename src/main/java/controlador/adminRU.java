@@ -24,7 +24,7 @@ public class adminRU extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
+    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -41,7 +41,7 @@ public class adminRU extends HttpServlet {
 				}
 				respuesta.print(respuestaJson);
 	
-			
+				
 	
 		
 	}

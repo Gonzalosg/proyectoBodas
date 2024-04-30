@@ -54,8 +54,8 @@ public class gestionUsuario extends HttpServlet {
 		String email = request.getParameter("email");
 		String fechaBoda= request.getParameter("fechaBoda");
 		String contrasenia = request.getParameter("contrasenia");
-		
 		int permiso=9;
+		
 		try {
 			MessageDigest md = MessageDigest.getInstance("SHA-256");
 			md.update(contrasenia.getBytes());

@@ -39,7 +39,7 @@ import java.sql.SQLException;
 			try {
 				u.obtenerPorId(id);
 				out.print(u.dameJson());
-				System.out.println(u.toString());
+				System.out.println(u.dameJson());
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

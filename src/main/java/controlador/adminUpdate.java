@@ -40,6 +40,7 @@ import java.sql.SQLException;
 			try {
 				u.obtenerPorId(id);
 				out.print(u.dameJson());
+				
 				System.out.println(u.dameJson());
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -47,6 +48,8 @@ import java.sql.SQLException;
 			}
 			
 		}
+		
+		
 		
 		
 	}
@@ -76,6 +79,7 @@ import java.sql.SQLException;
 			
 			u.setId(id);
 			u.update();
+			response.sendRedirect("galeriaUsuarios.html");
 		
 		    
 		} catch (Exception e) {

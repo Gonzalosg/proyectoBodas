@@ -7,7 +7,7 @@
 		
 		function pintarFormulario(datos){
 		  let html =`<h1>Edita tus datos:</h1>
-        <hr>
+        <hr>	
        
 
         <form action="adminUpdate" method="post" id="registro">
@@ -21,12 +21,12 @@
             
             <div class="form-group">
                 <label for="apellido1"><h3>Primer Apellido:</h3></label>
-                <input type="text" id="primerApellido" name="primerApellido" value="${datos.apellido1}">
+                <input type="text" id="apellido1" name="apellido1" value="${datos.apellido1}">
             </div>
             
             <div class="form-group">
                 <label for="apellido2"><h3>Segundo Apellido:</h3></label>
-                <input type="text" id="segundoApellido" name="segundoApellido" value="${datos.apellido2}">
+                <input type="text" id="apellido2" name="apellido2" value="${datos.apellido2}">
             </div>
             
             <div class="form-group">
@@ -41,10 +41,13 @@
             
             <div class="form-group">
                 <label for="contraseña"><h3>Contraseña:</h3></label>
-                <input type="text" id="contrasenia" name="contraseña" value="${datos.hashContrasenia}">
+                <input type="text" id="contrasenia" name="contrasenia" value="${datos.hashContrasenia}">
             </div>
            
-            <button type="submit">Editar</button>
+           
+            <a href='galeriaUsuarios.html?id="+datos[i].id+"&op=2'>
+  				<button type="submit">Editar</button>
+			</a>
 
         </form>`
    

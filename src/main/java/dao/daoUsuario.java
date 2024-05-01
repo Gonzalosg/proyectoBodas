@@ -49,6 +49,23 @@ public class daoUsuario {
 		ps.close();
 	}
 	
+	public void update(usuario u) throws SQLException {
+		
+		String sql = "UPDATE usuario SET nombre=?,apellido1=?,apellido2=?,email=?,fechaBoda=?,hashContrasenia=?,permiso=? WHERE id=?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1,u.getNombre());
+		ps.setString(2,u.getApellido1());
+		ps.setString(3,u.getApellido2());
+		ps.setString(4,u.getEmail());
+		ps.setString(5,u.getFechaBoda());
+		ps.setString(6,u.getHashContrasenia());
+		ps.setInt(7,u.getPermiso());
+		ps.setInt(8, u.getId());
+		
+		int filas = ps.executeUpdate();
+		ps.close();		
+	}
+	
 	
 	public ArrayList <usuario> listar () throws SQLException{
 		String sql = "SELECT * from usuario";

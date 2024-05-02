@@ -2,7 +2,7 @@
 		
 		var urlParams = new URLSearchParams(window.location.search);
 			var id = urlParams.get('id');
-			var op = urlParams.get('op');
+			
 		
 		
 		function pintarFormulario(datos){
@@ -45,8 +45,8 @@
             </div>
            
            
-            <a href='galeriaUsuarios.html?id="+datos[i].id+"&op=2'><button id"botonEditar" type="submit">Editar</button></a>
-
+            <a href='galeriaUsuarios.html?id="+datos[i].id+"'><button id"botonEditar" type="submit">Editar</button></a>
+											
         </form>`
    
        document.getElementById("registro").innerHTML = html;
@@ -54,9 +54,9 @@
 		
 		
 		
-	function llamada(id,op){
+	function llamada(id){
 			
-			fetch('adminUpdate?id='+id+"&op="+op)
+			fetch('adminUpdate?id='+id)
 			.then(response => response.json())
 			.then(data => pintarFormulario(data))
 		}
@@ -68,7 +68,7 @@
 		
 	window.onload = function () {
 			
-			llamada(id,op);
+			llamada(id);
 			
 		}	
 		

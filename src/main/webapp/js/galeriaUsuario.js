@@ -41,7 +41,7 @@
 			html += "<td>"+datos[i].email+"</td>"
 			html += "<td>"+datos[i].fechaBoda+"</td>"
 			html += "<td>"+datos[i].permiso+"</td>"
-			html += "<td><a href='editarUsuario.html?id="+datos[i].id+"&op=2'>Editar</a></td><td><a href='javascript:eliminar("+datos[i].id+")'>Eliminar</a></td>"
+			html += "<td><a href='editarUsuario.html?id="+datos[i].id+"'>Editar</a></td><td><a href='javascript:eliminar("+datos[i].id+")'>Eliminar</a></td>"
 			
 			html += "</tr>"
 			

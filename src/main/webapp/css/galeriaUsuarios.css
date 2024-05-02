@@ -2,36 +2,44 @@
     margin: 0%;
     padding: 0%;
     }
+
+    .listado{
+        width: 80%;
+        height: 700px;
+   
+        padding-bottom: 150px;
+       
+    }
     
-    .contenedor{
+    .espacioTabla{
         
-      
+        width: 100%;
+        height: 937px;
+        background-color: rgb(198, 145, 132);
+        border-style: groove;
+        display:flex;
+        align-items: center;
         justify-content: center;
+        
     }
     
     header{
         background-color: rgb(65, 14, 14);
-        margin-right: 5%;
-        margin-left: 5%;
-        height: 80px;
+        padding-top: 20px;
+        height: 100px;
         align-items: center;
-        
-    }
-    body{
-        margin-top: 20px;
-         background-color: rgb(65, 14, 14);
         width: 100%;
-        height: 100%;
         
     }
+
     .title{
         background-color: rgb(65, 14, 14);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 200px;
-            font-size: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 200px;
+        font-size: 50px;
     }
    
     
@@ -54,32 +62,5 @@
     nav ul {
        
         text-align: center;
-    }
-    
-    table {
-        width: 90%;
-        border-collapse: collapse;
-        border-spacing: 0;
-        background-color: rgb(198, 145, 132);
-	    text-align: center; 
-	    
-    }
-    .listado{
-		 display: flex;
-        align-items: center;
-        justify-content: center;
-	}
-    th, td {
-        padding: 12px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
-    th {
-         background-color: rgb(198, 145, 132);
-        color: #333;
-        text-transform: uppercase;
-    }
-    tr:hover {
-        background-color: #f5f5f5; 
     }
     

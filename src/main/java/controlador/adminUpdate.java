@@ -33,8 +33,10 @@ import java.sql.SQLException;
 		
 		PrintWriter out = response.getWriter();
 		int id = Integer.parseInt(request.getParameter("id"));
+		int opcion = Integer.parseInt(request.getParameter("op"));
 		
-		usuario u = new usuario();
+		if(opcion==2) {
+			usuario u = new usuario();
 			try {
 				u.obtenerPorId(id);
 				out.print(u.dameJson());
@@ -45,7 +47,7 @@ import java.sql.SQLException;
 				e.printStackTrace();
 			}
 			
-		
+		}
 		
 		
 		

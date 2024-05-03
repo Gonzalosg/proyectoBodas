@@ -64,6 +64,7 @@ public class gestionUsuario extends HttpServlet {
 		    usuario u = new usuario(nombre, apellido1, apellido2, email, fechaBoda,myHash, permiso);
 			
 			u.insertar();
+			response.sendRedirect("galeriaUsuarios.html");
 			System.out.println(u+" usuario insertado");
 		    
 		} catch (Exception e) {

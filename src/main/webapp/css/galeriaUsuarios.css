@@ -5,19 +5,18 @@
     
     .listado {
        width: 80%;
-       height: 700px;
-   	  margin-top: 0%;
-   	  background-color: rgb(65, 14, 14);
+       height: 400px;
+   background-color: rgb(65, 14, 14);
+   	  
 	   	  
     }
 		    
 	.espacioTabla{
 	    width: 100%;
 	    height: 937px;
-		background-color: rgb(65, 14, 14);
-		
+	background-color: rgb(65, 14, 14);
 		display:flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: center;
 		
 		        
@@ -36,7 +35,7 @@
     
      body{
         
-         background-color: rgb(65, 14, 14);
+        background-color: rgb(65, 14, 14);
         width: 100%;
         height: 100%;
         
@@ -85,7 +84,7 @@
         border-spacing: 0;
         background-color: rgb(198, 145, 132);
 	    text-align: center; 
-	  	border: solid  rgb(65, 14, 14);
+	  	border: 4px solid  rgb(0, 0, 0);
 	    
     }
     .listado{

@@ -39,14 +39,4 @@
     <servlet-name>adminUpdate</servlet-name>
     <url-pattern>/adminUpdate</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>adminEliminar</display-name>
-    <servlet-name>adminEliminar</servlet-name>
-    <servlet-class>controlador.adminEliminar</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>adminEliminar</servlet-name>
-    <url-pattern>/adminEliminar</url-pattern>
-  </servlet-mapping>
 </web-app>

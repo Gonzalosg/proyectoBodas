@@ -35,7 +35,7 @@ import java.sql.SQLException;
 		int id = Integer.parseInt(request.getParameter("id"));
 		int opcion = Integer.parseInt(request.getParameter("op"));
 		
-		if(opcion==2) {
+		
 			usuario u = new usuario();
 			try {
 				u.obtenerPorId(id);
@@ -45,7 +45,7 @@ import java.sql.SQLException;
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			
 			
 		}
 		

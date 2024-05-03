@@ -66,14 +66,6 @@ public class daoUsuario {
 		ps.close();		
 	}
 	
-	public void delete (int id) throws SQLException {
-		String sql = "delete from usuario where id=?";
-		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setInt(1, id);
-		int filas = ps.executeUpdate();
-		ps.close();
-	}
-	
 	
 	public ArrayList <usuario> listar () throws SQLException{
 		String sql = "SELECT * from usuario";

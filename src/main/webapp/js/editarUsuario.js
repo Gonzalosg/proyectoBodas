@@ -2,7 +2,7 @@
 		
 		var urlParams = new URLSearchParams(window.location.search);
 			var id = urlParams.get('id');
-			var op = urlParams.get('op');
+			
 		
 		
 		function pintarFormulario(datos){
@@ -54,9 +54,9 @@
 		
 		
 		
-	function llamada(id,op){
+	function llamada(id){
 			
-			fetch('adminUpdate?id='+id+"&op="+op)
+			fetch('adminUpdate?id='+id)
 			.then(response => response.json())
 			.then(data => pintarFormulario(data))
 		}
@@ -68,7 +68,7 @@
 		
 	window.onload = function () {
 			
-			llamada(id,op);
+			llamada(id);
 			
 		}	
 		

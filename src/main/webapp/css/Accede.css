@@ -4,13 +4,12 @@
     }
     
     .contenedor{
-        
-        margin-top: 1%;
+       
+        margin-top: 5%;
         display: flex; 
         justify-content: center; 
         gap: 50px;
         align-items: center;
-        
         
     }
     
@@ -21,11 +20,10 @@
         height: 80px;
         align-items: center;
         justify-content: center;
-        padding-top: 20px;
         
     }
     body{
-       
+        margin-top: 20px;
         background-color: rgb(65, 14, 14);
     }
     .title{
@@ -131,3 +129,5 @@
     hr{
         margin-bottom: 20px;
     }
+
+     

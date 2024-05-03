@@ -50,10 +50,14 @@ public class usuario {
 		daoUsuario.getInstance().insertar(this);
 	}
 	
-public void update () throws SQLException {
+	public void update () throws SQLException {
 		
 		daoUsuario.getInstance().update(this);
 	}
+
+	public void delete (int id) throws SQLException {
+	daoUsuario.getInstance().delete(id);
+}
 	
 	
 	public void obtenerPorId(int id) throws SQLException {

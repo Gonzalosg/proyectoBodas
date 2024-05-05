@@ -10,7 +10,7 @@
         <hr>	
        
 
-        <form action="adminUpdate" method="post" id="registro">
+        <form action="adminUpdate" method="post" id="editarDatos">
         
         		<input type="hidden" id="id" name="id" value="${datos.id}">
         		
@@ -45,11 +45,11 @@
             </div>
            
            
-            <a href='galeriaUsuarios.html?id="+datos[i].id+"&op=2'><button id"botonEditar" type="submit">Editar</button></a>
+            <a href='galeriaUsuarios.html?id="+datos[i].id+"'><button id"botonEditar" type="submit">Editar</button></a>
 
         </form>`
    
-       document.getElementById("registro").innerHTML = html;
+       document.getElementById("editarDatos").innerHTML = html;
 		}
 		
 		

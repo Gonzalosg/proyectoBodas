@@ -5,9 +5,13 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+
+import com.mysql.cj.Session;
 
 import dao.daoUsuario;
 
@@ -17,6 +21,8 @@ import dao.daoUsuario;
 public class adminRU extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+	HttpSession sesion;
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -29,6 +35,8 @@ public class adminRU extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		sesion = request.getSession();
 		
 		String respuestaJson ="";	
 		PrintWriter respuesta = response.getWriter();

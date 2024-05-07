@@ -106,6 +106,22 @@ public class daoUsuario {
 		
 	}
 	
+	public usuario logeando (usuario u, String pass) throws SQLException {
+		
+		String sql = "SELECT * FROM usuario where email=? AND hashContrasenia?=";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1,u.getEmail());
+		ps.setString(2, u.getHashContrasenia());
+		
+		ResultSet rs = ps.executeQuery();
+		
+		rs.next();
+		
+		usuario aux = new usuario(rs.getInt(1), rs.getString(2), rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7), rs.getInt(8));
+		
+		return aux;
+	}
+	
 	
 	public String listarJson () throws SQLException {
 		String json = "";

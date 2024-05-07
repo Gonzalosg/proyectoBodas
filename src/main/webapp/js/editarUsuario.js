@@ -56,7 +56,7 @@
 		
 	function llamada(id){
 			
-			fetch('adminUpdate?id='+id)
+			fetch('adminUpdate?id='+id)	
 			.then(response => response.json())
 			.then(data => pintarFormulario(data))
 		}

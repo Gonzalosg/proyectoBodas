@@ -5,6 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import modelo.usuario;
 
 import java.io.IOException;
@@ -18,6 +19,9 @@ import java.sql.SQLException;
 	public class adminUpdate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+	
+	HttpSession sesion;
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -58,34 +62,38 @@ import java.sql.SQLException;
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		
 		
-		String nombre = request.getParameter("nombre");
-		String apellido1 = request.getParameter("apellido1");
-		String apellido2 = request.getParameter("apellido2");
-		String email = request.getParameter("email");
-		String fechaBoda= request.getParameter("fechaBoda");
-		String contrasenia = request.getParameter("contrasenia");
-		int permiso=9;
-		int id = Integer.parseInt(request.getParameter("id"));
-		
-		try {
-			MessageDigest md = MessageDigest.getInstance("SHA-256");
-			md.update(contrasenia.getBytes());
-		    byte[] digest = md.digest();
-		    String myHash = new String(digest);
-		    usuario u = new usuario(nombre, apellido1, apellido2, email, fechaBoda,myHash, permiso);
+
+			String nombre = request.getParameter("nombre");
+			String apellido1 = request.getParameter("apellido1");
+			String apellido2 = request.getParameter("apellido2");
+			String email = request.getParameter("email");
+			String fechaBoda= request.getParameter("fechaBoda");
+			String contrasenia = request.getParameter("contrasenia");
+			int permiso=9;
+			int id = Integer.parseInt(request.getParameter("id"));
 			
-			u.setId(id);
-			u.update();
-			response.sendRedirect("galeriaUsuarios.html");
+			try {
+				MessageDigest md = MessageDigest.getInstance("SHA-256");
+				md.update(contrasenia.getBytes());
+			    byte[] digest = md.digest();
+			    String myHash = new String(digest);
+			    usuario u = new usuario(nombre, apellido1, apellido2, email, fechaBoda,myHash, permiso);
+				
+				u.setId(id);
+				u.update();
+				response.sendRedirect("galeriaUsuarios.html");
+			
+			    
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		
-		    
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+		
 		
 	
 	}

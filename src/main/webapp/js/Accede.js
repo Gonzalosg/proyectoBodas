@@ -8,7 +8,7 @@ function validarFormulario(){
 		
 		let valido = true;
 		
-		if(nombre==""){
+		if(nombre==""){	
 			valido=false;
 			document.getElementById('nombre').style.background= 'red';
 		}

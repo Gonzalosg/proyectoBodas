@@ -74,6 +74,26 @@ public class usuario {
 		this.setPermiso(aux.getPermiso());
 	}
 	
+	public boolean logeo (String pass) throws SQLException {
+		
+		boolean ok = false;
+		
+		usuario aux = daoUsuario.getInstance().logeando(this, pass);
+		
+		if(aux!=null) {
+			this.setId(aux.getId());
+			this.setNombre(aux.getNombre());
+			this.setApellido1(aux.getApellido1());
+			this.setApellido2(aux.getApellido2());
+			this.setEmail(aux.getEmail());
+			this.setFechaBoda(aux.getFechaBoda());
+			this.setHashContrasenia(aux.getHashContrasenia());
+			this.setPermiso(aux.getPermiso());
+		}
+		
+		return ok;
+	}
+	
 	public String dameJson () throws SQLException {
 		String json = "";
 		Gson gson = new Gson ();

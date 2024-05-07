@@ -9,23 +9,18 @@ import jakarta.servlet.http.HttpSession;
 import modelo.usuario;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 
-import dao.daoUsuario;
-
 /**
- * Servlet implementation class adminEliminar
+ * Servlet implementation class login
  */
-public class adminEliminar extends HttpServlet {
+public class login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	HttpSession sesion;
-	
+       HttpSession sesion;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public adminEliminar() {
+    public login() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,16 +29,6 @@ public class adminEliminar extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
-		int id = Integer.parseInt(request.getParameter("id"));
-		try {
-			daoUsuario.getInstance().delete(id);
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 	}
 
@@ -51,7 +36,36 @@ public class adminEliminar extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
+		
+		
+		String email = request.getParameter("email");
+		String pass = request.getParameter("contrasenia");
+		
+		usuario u = new usuario();
+		u.setEmail(email);
+		
+		try {
+			if(u.logeo(pass)) {
+				
+				sesion = request.getSession();
+				sesion.setAttribute("id", u.getId());
+				sesion.setAttribute("permiso",u.getPermiso());
+				
+				response.sendRedirect("galeriaUsuarios.html");
+				
+			}else {
+				response.sendRedirect("Accede.html"); 
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 		
 	}
 

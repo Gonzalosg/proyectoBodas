@@ -37,17 +37,28 @@ public class adminRU extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		sesion = request.getSession();
+		int idSesion = (int) sesion.getAttribute("id");
+		int permisoSesion = (int) sesion.getAttribute("permiso");
 		
-		String respuestaJson ="";	
-		PrintWriter respuesta = response.getWriter();
-	
-			try {
-					respuestaJson = daoUsuario.getInstance().listarJson();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				respuesta.print(respuestaJson);
+		System.out.println(idSesion);
+		System.out.println(permisoSesion);
+		
+		if(idSesion>0 && permisoSesion==1) {
+			String respuestaJson ="";	
+			PrintWriter respuesta = response.getWriter();
+		
+				try {
+						respuestaJson = daoUsuario.getInstance().listarJson();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					respuesta.print(respuestaJson);
+		}else {
+			response.sendRedirect("Accede.html");
+		}
+		
+		
 	
 				
 	

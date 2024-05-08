@@ -1,5 +1,8 @@
 package modelo;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
 import com.google.gson.Gson;
@@ -74,11 +77,11 @@ public class usuario {
 		this.setPermiso(aux.getPermiso());
 	}
 	
-	public boolean logeo (String pass) throws SQLException {
+	public boolean logeo () throws SQLException {
 		
 		boolean ok = false;
 		
-		usuario aux = daoUsuario.getInstance().logeando(this, pass);
+		usuario aux = daoUsuario.getInstance().logeando(this);
 		
 		if(aux!=null) {
 			this.setId(aux.getId());
@@ -89,6 +92,8 @@ public class usuario {
 			this.setFechaBoda(aux.getFechaBoda());
 			this.setHashContrasenia(aux.getHashContrasenia());
 			this.setPermiso(aux.getPermiso());
+			
+			ok=true;
 		}
 		
 		return ok;
@@ -103,6 +108,22 @@ public class usuario {
 		
 		return json;
 	}
+	
+	public static String getMD5(String input) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] messageDigest = md.digest(input.getBytes());
+            BigInteger number = new BigInteger(1, messageDigest);
+            String hashtext = number.toString(16);
+
+            while (hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
+            }
+            return hashtext;
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 	public int getId() {
 		return id;

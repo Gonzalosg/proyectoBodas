@@ -60,10 +60,8 @@ public class gestionUsuario extends HttpServlet {
 		int permiso=9;
 		
 		try {
-			MessageDigest md = MessageDigest.getInstance("SHA-256");
-			md.update(contrasenia.getBytes());
-		    byte[] digest = md.digest();
-		    String myHash = new String(digest);
+			
+		    String myHash = usuario.getMD5(contrasenia);
 		    usuario u = new usuario(nombre, apellido1, apellido2, email, fechaBoda,myHash, permiso);
 			
 			u.insertar();

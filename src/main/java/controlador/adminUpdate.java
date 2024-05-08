@@ -75,10 +75,9 @@ import java.sql.SQLException;
 			int id = Integer.parseInt(request.getParameter("id"));
 			
 			try {
-				MessageDigest md = MessageDigest.getInstance("SHA-256");
-				md.update(contrasenia.getBytes());
-			    byte[] digest = md.digest();
-			    String myHash = new String(digest);
+				
+			   
+			    String myHash = usuario.getMD5(contrasenia);
 			    usuario u = new usuario(nombre, apellido1, apellido2, email, fechaBoda,myHash, permiso);
 				
 				u.setId(id);

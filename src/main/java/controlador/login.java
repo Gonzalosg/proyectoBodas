@@ -9,6 +9,9 @@ import jakarta.servlet.http.HttpSession;
 import modelo.usuario;
 
 import java.io.IOException;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
 /**
@@ -39,14 +42,14 @@ public class login extends HttpServlet {
 	
 		
 		
-		String email = request.getParameter("email");
-		String pass = request.getParameter("contrasenia");
+		String email = request.getParameter("emailLog");
+		String pass = request.getParameter("contraseniaLog");
 		
 		usuario u = new usuario();
 		u.setEmail(email);
-		
+		u.setHashContrasenia(usuario.getMD5(pass));
 		try {
-			if(u.logeo(pass)) {
+			if(u.logeo()) {
 				
 				sesion = request.getSession();
 				sesion.setAttribute("id", u.getId());
@@ -68,5 +71,6 @@ public class login extends HttpServlet {
 		
 		
 	}
+	
 
 }

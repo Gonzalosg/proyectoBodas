@@ -106,12 +106,12 @@ public class daoUsuario {
 		
 	}
 	
-	public usuario logeando (usuario u, String pass) throws SQLException {
+	public usuario logeando (usuario u) throws SQLException {
 		
-		String sql = "SELECT * FROM usuario where email=? AND hashContrasenia?=";
+		String sql = "SELECT * FROM usuario where email=? AND hashContrasenia=?";
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setString(1,u.getEmail());
-		ps.setString(2, u.getHashContrasenia());
+		ps.setString(1, u.getEmail());
+		ps.setString(2, u.getHashContrasenia());	
 		
 		ResultSet rs = ps.executeQuery();
 		

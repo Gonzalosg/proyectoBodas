@@ -92,7 +92,7 @@ public class usuario {
 			this.setFechaBoda(aux.getFechaBoda());
 			this.setHashContrasenia(aux.getHashContrasenia());
 			this.setPermiso(aux.getPermiso());
-			
+			System.out.println(aux);
 			ok=true;
 		}
 		

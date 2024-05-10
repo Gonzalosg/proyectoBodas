@@ -48,6 +48,7 @@ public class login extends HttpServlet {
 		usuario u = new usuario();
 		u.setEmail(email);
 		u.setHashContrasenia(usuario.getMD5(pass));
+		
 		try {
 			if(u.logeo()) {
 				

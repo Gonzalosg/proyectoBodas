@@ -112,12 +112,16 @@ public class daoUsuario {
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, u.getEmail());
 		ps.setString(2, u.getHashContrasenia());	
-		
+		System.out.println(ps);
 		ResultSet rs = ps.executeQuery();
+		usuario aux=null;
 		
-		rs.next();
+		if(rs.next()) {
+			aux = new usuario(rs.getInt(1), rs.getString(2), rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7), rs.getInt(8));
+			
+			
 		
-		usuario aux = new usuario(rs.getInt(1), rs.getString(2), rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7), rs.getInt(8));
+		}
 		
 		return aux;
 	}

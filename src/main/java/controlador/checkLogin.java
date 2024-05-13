@@ -28,7 +28,7 @@ public class checkLogin extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		 HttpSession session = request.getSession(false); // No crear sesión si no existe
+		 HttpSession session = request.getSession(false); 
 	        if (session != null) {
 	            int permiso = (int) session.getAttribute("permiso");
 	            

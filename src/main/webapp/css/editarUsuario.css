@@ -74,26 +74,28 @@
     }
     
     
-    nav ul li{
-        display: inline-block;
-        border: solid black;
-        border-radius: 10px;
-        width: 20%;
-        
-        
-    }
-    nav ul li a{
-        font-size: 30px;
-        padding: 10px 0;
-        display: block;
-        color: black;
-        background-color: rgb(198, 145, 132);
-    }
+   nav ul li{
+    display: inline-block;
+    border: solid rgb(198, 145, 132);
+    border-radius: 10px;
+    width: 20%;
+   
     
-    nav ul {
-       
-        text-align: center;
-    }
+    
+}
+nav ul li a{
+    font-size: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    padding: 10px 0;
+    display: block;
+    color: rgb(70, 7, 10);
+    background-color: rgb(198, 145, 132);
+}
+
+nav ul {
+   
+    text-align: center;
+}
     
     label{
         display: inline-block;
@@ -116,3 +118,4 @@
     hr{
         margin-bottom: 20px;
     }
+    

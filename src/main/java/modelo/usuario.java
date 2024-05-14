@@ -18,6 +18,7 @@ public class usuario {
 	private String fechaBoda;
 	private String hashContrasenia;
 	private int permiso;
+	private servicio servicio;
 	
 	public usuario() {
 		
@@ -48,10 +49,12 @@ public class usuario {
 		this.permiso = permiso;
 	}
 	
+	
 	public void insertar () throws SQLException {
 		
 		daoUsuario.getInstance().insertar(this);
 	}
+	
 	
 	public void update () throws SQLException {
 		
@@ -187,6 +190,16 @@ public class usuario {
 
 	public void setPermiso(int permiso) {
 		this.permiso = permiso;
+	}
+	
+	
+
+	public servicio getServicio() {
+		return servicio;
+	}
+
+	public void setServicio(servicio servicio) {
+		this.servicio = servicio;
 	}
 
 	@Override

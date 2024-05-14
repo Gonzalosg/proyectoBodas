@@ -25,22 +25,25 @@ function obtenerPermisoUsuario() {
 		
 	
 	
-       function actualizarNavbar(permiso) {
+     function actualizarNavbar(permiso) {
     	
     	var elementoAccede = document.getElementById("accede");
+    	var elementoLogOut = document.getElementById("logOut");
     	
-    		if (permiso) {
-        		console.log("Este es el permiso desde la funcion actualizar Navbar"+permiso)
+    		if (permiso==1) {
+        		
        			elementoAccede.innerHTML= "admin";
        			elementoAccede.href= "galeriaUsuarios.html"
         
-    		} else {
+    		}if (permiso!=null){
+				elementoLogOut.style.display="inline";
+				
+													
+			}else {
       			elementoAccede.innerHTML= "accede";
       			elementoAccede.href= "Accede.html";
-    		}	
+      			elementoLogOut.style.display = "none";    		}	
 		}
-
-
 
 
 

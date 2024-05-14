@@ -8,9 +8,13 @@ import java.util.ArrayList;
 
 import com.google.gson.Gson;
 
+import jakarta.servlet.http.HttpSession;
+import modelo.servicio;
 import modelo.usuario;
 
 public class daoUsuario {
+	
+	HttpSession sesion;
 	
 	private Connection con = null;
 	private static daoUsuario instance = null;
@@ -33,6 +37,22 @@ public class daoUsuario {
 		}
 		return instance;
 	}
+	
+	public void insertarServicio (servicio s, int id) throws SQLException {
+						
+		String sql2 = "INSERT INTO tienda_usuario (idUsuario, idServicio, nombreServicio, precioServicio) VALUES (?,?,?,?) where idUsuario='"+id+"'";
+		PreparedStatement ps2 = con.prepareStatement(sql2);
+		ps2.setInt(1, id);
+		ps2.setInt(2, s.getIdServicio());
+		ps2.setString(3, s.getNombreServicio());
+		ps2.setFloat(4, s.getPrecioServicio());
+		ps2.executeUpdate();
+		
+		ps2.close();
+		
+		
+	}
+	
 	
 	public void insertar(usuario u) throws SQLException {
 		

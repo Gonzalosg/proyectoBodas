@@ -33,6 +33,16 @@ public class login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		sesion = request.getSession(false);
+		
+		if(sesion!=null) {
+			sesion.invalidate();
+			response.sendRedirect("home.html");
+		}else {
+			response.sendRedirect("Accede.html");
+		}
+		
+		
 	}
 
 	/**
@@ -56,7 +66,7 @@ public class login extends HttpServlet {
 				sesion.setAttribute("id", u.getId());
 				sesion.setAttribute("permiso",u.getPermiso());
 				
-				response.sendRedirect("galeriaUsuarios.html");
+				response.sendRedirect("home.html");
 				
 			}else {
 				response.sendRedirect("Accede.html"); 

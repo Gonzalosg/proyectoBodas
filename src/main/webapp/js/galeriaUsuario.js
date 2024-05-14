@@ -21,8 +21,7 @@
 			
 			actualizarNavbar(permiso);
 			
-            console.log('El permiso del usuario es:', permiso);
-            // Puedes hacer algo con el permiso aquí
+           
         })
         .catch(error => {
             console.error('Error:', error);
@@ -37,16 +36,21 @@
        function actualizarNavbar(permiso) {
     	
     	var elementoAccede = document.getElementById("accede");
+    	var elementoLogOut = document.getElementById("logOut");
     	
-    		if (permiso) {
-        		console.log("Este es el permiso desde la funcion actualizar Navbar"+permiso)
+    		if (permiso==1) {
+        		
        			elementoAccede.innerHTML= "admin";
        			elementoAccede.href= "galeriaUsuarios.html"
         
-    		} else {
+    		}else if (permiso){
+				elementoLogOut.style.display="inline";
+				
+													
+			}else {
       			elementoAccede.innerHTML= "accede";
       			elementoAccede.href= "Accede.html";
-    		}	
+      			elementoLogOut.style.display = "none";    		}	
 		}
 
 

@@ -166,3 +166,16 @@ nav ul {
 li a {
     color: rgb(70, 7, 10);
 }
+
+.botonOut{
+		margin-right: 100px; 
+    	float: right; 
+    	margin-top: 20px;
+    	padding: 12px 24px;
+    	font-size: 20px;
+    	background-color: rgb(198, 145, 132);  	
+    	border-radius: 5px; 
+    	cursor: pointer; 
+    	display: none;
+    	
+	}

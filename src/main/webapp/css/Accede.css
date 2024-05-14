@@ -128,46 +128,14 @@ nav ul {
         margin-bottom: 20px;
     }
 
-     .footer {
-	position: fixed;	
-	bottom: 0; 
-    background-color: rgb(198, 145, 132);
+
+
+
+	li a {
     color: rgb(70, 7, 10);
-    height:120px;
-    width: 100%;
-    border: solid rgba(0, 0, 0, 0.452);
-    
-    
-}
+	}
 
-.inner-footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.footer-items {
-    flex: 1;
-    
-}
-
-.footer-items h2 {
-    margin-bottom: 20px;
-}
-
-.footer-items h3 {
-    margin-bottom: 5px;
-}
-
-.footer-items ul {
-    list-style: none;
-    padding: 0;
-}
-li a {
-    color: rgb(70, 7, 10);
-}
-
-.botonOut{
+	.botonOut{
 		margin-right: 100px; 
     	float: right; 
     	margin-top: 20px;

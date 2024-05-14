@@ -108,5 +108,6 @@ nav ul {
     	background-color: rgb(198, 145, 132);  	
     	border-radius: 5px; 
     	cursor: pointer; 
+    	display: none;
     	
 	}

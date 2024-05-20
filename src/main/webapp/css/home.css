@@ -1,160 +1,169 @@
-*{
-margin: 0%;
-padding: 0%;
+* {
+	margin: 0%;
+	padding: 0%;
 }
 
-.contenedor{
-    justify-content: center;
+.contenedor {
+	justify-content: center;
 }
 
-header{
-    background-color: rgb(65, 14, 14);
-    margin-right: 5%;
-    margin-left: 5%;
-    height: 80px;
-    align-items: center;
-    
-}
-body{
-    margin-top: 20px;
-    background-color: rgb(65, 14, 14);
-    width: 100%;
-    height: 100%;
-}
-.title{
-    background-color: rgb(65, 14, 14);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 200px;
-        font-size: 50px;
-}
-.video{
-    width: 99.75%;
-    height: 950px;
-    display: flex;
-  	background-color:rgb(198, 145, 132);
-    overflow: hidden;
-    border: solid   rgb(198, 145, 132);
-    
-    
+header {
+	background-color: rgb(65, 14, 14);
+	margin-right: 5%;
+	margin-left: 5%;
+	height: 80px;
+	align-items: center;
+
 }
 
-
-.textoHome{
-    
-    background-color:rgb(70, 7, 10);
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-   
+body {
+	margin-top: 20px;
+	background-color: rgb(65, 14, 14);
+	width: 100%;
+	height: 100%;
 }
-.cajitaTexto{
-    
-    width: 40%;  
-    height:90%;  
-    text-align: center ;
-    justify-content: center;
-    font-size: 22px;
-    color: rgb(198, 145, 132);
-    line-height: 1.5;
-    padding: 20px;
-    background-color:rgb(70, 7, 10);
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   
+
+.title {
+	background-color: rgb(65, 14, 14);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 200px;
+	font-size: 50px;
 }
-.patronFlores{
-width: 30%;
-height:100%;
-background-color:rgb(70, 7, 10);
-display: flex;
-align-items: center;
-justify-content: center;
+
+.video {
+	width: 99.75%;
+	height: 950px;
+	display: flex;
+	background-color: rgb(198, 145, 132);
+	overflow: hidden;
+	border: solid rgb(198, 145, 132);
+
+
 }
 
 
-.fotoHome{
-    background-color:rgb(70, 7, 10);
-    height: 500px;
-    text-align: center ;
-    
-    padding-bottom: 1%;
+.textoHome {
+
+	background-color: rgb(70, 7, 10);
+	height: 400px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+
+}
+
+.cajitaTexto {
+
+	width: 40%;
+	height: 90%;
+	text-align: center;
+	justify-content: center;
+	font-size: 22px;
+	color: rgb(198, 145, 132);
+	line-height: 1.5;
+	padding: 20px;
+	background-color: rgb(70, 7, 10);
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.patronFlores {
+	width: 30%;
+	height: 100%;
+	background-color: rgb(70, 7, 10);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 
-nav ul li{
-    display: inline-block;
-    border: solid rgb(198, 145, 132);
-    border-radius: 10px;
-    width: 20%;
-   
-    
-    
+.fotoHome {
+	background-color: rgb(70, 7, 10);
+	height: 500px;
+	text-align: center;
+
+	padding-bottom: 1%;
 }
-nav ul li a{
-    font-size: 30px;
-    font-family:Georgia, 'Times New Roman', Times, serif ;
-    padding: 10px 0;
-    display: block;
-    color: rgb(70, 7, 10);
-    background-color: rgb(198, 145, 132);
+
+
+nav ul li {
+	display: inline-block;
+	border: solid rgb(198, 145, 132);
+	border-radius: 10px;
+	width: 20%;
+
+
+
+}
+
+nav ul li a {
+	font-size: 30px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	padding: 10px 0;
+	display: block;
+	color: rgb(70, 7, 10);
+	background-color: rgb(198, 145, 132);
 }
 
 nav ul {
-   
-    text-align: center;
+
+	text-align: center;
 }
 
 .footer {
-    background-color: rgb(198, 145, 132);
-    color: rgb(70, 7, 10);
-    height:120px;
-    border: solid rgba(0, 0, 0, 0.452);
-    
+	background-color: rgb(198, 145, 132);
+	color: rgb(70, 7, 10);
+	height: 120px;
+	border: solid rgba(0, 0, 0, 0.452);
+
 }
 
 .inner-footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
 }
 
 .footer-items {
-    flex: 1;
-    
+	flex: 1;
+
 }
 
 .footer-items h2 {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 .footer-items h3 {
-    margin-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 .footer-items ul {
-    list-style: none;
-    padding: 0;
+	list-style: none;
+	padding: 0;
 }
 
 p a {
-    color: rgb(77, 112, 174);
+	color: rgb(77, 112, 174);
 }
+
 li a {
-    color: rgb(70, 7, 10);
+	color: rgb(70, 7, 10);
 }
- .botonOut{
-		margin-right: 100px; 
-    	float: right; 
-    	margin-top: 20px;
-    	padding: 12px 24px;
-    	font-size: 20px;
-    	background-color: rgb(198, 145, 132);  	
-    	border-radius: 5px; 
-    	cursor: pointer; 
-    	display: none;
-    	
-	}
+
+.botonOut {
+	margin-right: 100px;
+	float: right;
+	margin-top: 20px;
+	padding: 12px 24px;
+	font-size: 20px;
+	background-color: rgb(198, 145, 132);
+	border-radius: 5px;
+	cursor: pointer;
+	display: none;
+
+
+}

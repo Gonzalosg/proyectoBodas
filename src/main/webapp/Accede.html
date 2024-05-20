@@ -1,101 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><h2>Formulario de Registro</h2></title>
-<link rel="stylesheet" href="css/Accede.css">
-<script src = "js/Accede.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		<h2>Formulario de Registro</h2>
+	</title>
+	<link rel="stylesheet" href="css/Accede.css">
+	<script src="js/Accede.js"></script>
 
 
 </head>
+
 <body>
 
-     <header>
-            <nav>
-                <ul id="navUsuario">
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="home.html">Portfolio</a></li>
-                    <li><a href="tienda.html">Shop</a></li>
-                    <li><a id="accede" href="Accede.html">Accede</a></li>
-                    <!--<li id="administrar" style="display: none;"><a href="galeriaUsuarios.html">Admin</a></li>-->
-                 
-                </ul>
-            </nav>
-        </header>
+	<header>
+		<nav>
+			<ul id="navUsuario">
+				<li><a href="home.html">Home</a></li>
+				<li><a href="home.html">Portfolio</a></li>
+				<li><a href="tienda.html">Shop</a></li>
+				<li><a id="accede" href="Accede.html">Accede</a></li>
+				<!--<li id="administrar" style="display: none;"><a href="galeriaUsuarios.html">Admin</a></li>-->
+
+			</ul>
+		</nav>
+	</header>
 	<form id="logOut" class="botonOut" action="login" method="get">
-        <input type="submit" value="Cerrar sesión">
-    </form>
-   	<div class="title">
-            <img src="imagenes/Frameaframe_rosa.png" alt="frameAframe" width="18%" height="100%">
+		<input type="submit" value="Cerrar sesión">
+	</form>
+	<div class="title">
+		<img src="imagenes/Frameaframe_rosa.png" alt="frameAframe" width="18%" height="100%">
 	</div>
 
-<div class="contenedor">
-  
+	<div class="contenedor">
 
-    <div class="login">
 
-        <h1>Porfavor, introduce tus datos: </h1>
-        <hr>
+		<div class="login">
 
-        <form name="login" action="login" method="post">
-            <div class="form-group">
-                <label for="nombre"><h3>Email:</h3></label>
-                <input type="text" id="emailLog" name="emailLog" required>
-            </div>
-            <div class="form-group">
-                <label for="contrasenia"><h3>Contraseña: </h3></label>
-                <input type="text" id="contraseniaLog" name="contraseniaLog" required>
-            </div>
-            
-            <button type="submit" value="entrar">Iniciar sesión</button>
+			<h1>Porfavor, introduce tus datos: </h1>
+			<hr>
 
-        </form>
-    </div>
+			<form name="login" action="login" method="post">
+				<div class="form-group">
+					<label for="nombre">
+						<h3>Email:</h3>
+					</label>
+					<input type="text" id="emailLog" name="emailLog" required>
+				</div>
+				<div class="form-group">
+					<label for="contrasenia">
+						<h3>Contraseña: </h3>
+					</label>
+					<input type="text" id="contraseniaLog" name="contraseniaLog" required>
+				</div>
 
-    <div class="registro"> 
+				<button type="submit" value="entrar">Iniciar sesión</button>
 
-        <h1>¿No estás registrado? Regístrate:</h1>
-        <hr>
-       
+			</form>
+		</div>
 
-        <form action="gestionUsuario" method="post" id="registro">
-            <div class="form-group">
-                <label for="nombre"><h3>Nombre:</h3></label>
-                <input type="text" id="nombre" name="nombre">
-            </div>
-            <div class="form-group">
-                <label for="apellido1"><h3>Primer Apellido:</h3></label>
-                <input type="text" id="apellido1" name="apellido1">
-            </div>
-            <div class="form-group">
-                <label for="apellido2"><h3>Segundo Apellido:</h3></label>
-                <input type="text" id="apellido2" name="apellido2">
-            </div>
-            <div class="form-group">
-                <label for="email"><h3>Email:</h3></label>
-                <input type="text" id="email" name="email">
-            </div>
-            <div class="form-group">
-                <label for="fechaBoda"><h3>Fecha de la Boda:</h3></label>
-                <input type="text" id="fechaBoda" name="fechaBoda">
-            </div>
-            <div class="form-group">
-                <label for="contrasenia"><h3>Contraseña:</h3></label>
-                <input type="text" id="contrasenia" name="contrasenia">
-            </div>
-           
-            <button type="button" onclick="validarFormulario()">Registrarse</button>
+		<div class="registro">
 
-        </form>
-       
-    </div>
-    
+			<h1>¿No estás registrado? Regístrate:</h1>
+			<hr>
 
-</div>
-   
-   
 
-     
+			<form action="gestionUsuario" method="post" id="registro">
+				<div class="form-group">
+					<label for="nombre">
+						<h3>Nombre:</h3>
+					</label>
+					<input type="text" id="nombre" name="nombre">
+				</div>
+				<div class="form-group">
+					<label for="apellido1">
+						<h3>Primer Apellido:</h3>
+					</label>
+					<input type="text" id="apellido1" name="apellido1">
+				</div>
+				<div class="form-group">
+					<label for="apellido2">
+						<h3>Segundo Apellido:</h3>
+					</label>
+					<input type="text" id="apellido2" name="apellido2">
+				</div>
+				<div class="form-group">
+					<label for="email">
+						<h3>Email:</h3>
+					</label>
+					<input type="text" id="email" name="email">
+				</div>
+				<div class="form-group">
+					<label for="fechaBoda">
+						<h3>Fecha de la Boda:</h3>
+					</label>
+					<input type="text" id="fechaBoda" name="fechaBoda">
+				</div>
+				<div class="form-group">
+					<label for="contrasenia">
+						<h3>Contraseña:</h3>
+					</label>
+					<input type="text" id="contrasenia" name="contrasenia">
+				</div>
+
+				<button type="button" onclick="validarFormulario()">Registrarse</button>
+
+			</form>
+
+		</div>
+
+
+	</div>
+
+
+
+
 </body>
+
 </html>

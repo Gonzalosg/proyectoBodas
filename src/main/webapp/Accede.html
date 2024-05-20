@@ -27,9 +27,9 @@
 			</ul>
 		</nav>
 	</header>
-	<form id="logOut" class="botonOut" action="login" method="get">
-		<input type="submit" value="Cerrar sesión">
-	</form>
+	<form id="logOut" action="login" method="get">
+       <button id="logout" class="botonOut" type="submit">Cerrar Sesión</button>
+    </form>
 	<div class="title">
 		<img src="imagenes/Frameaframe_rosa.png" alt="frameAframe" width="18%" height="100%">
 	</div>
@@ -56,7 +56,7 @@
 					<input type="text" id="contraseniaLog" name="contraseniaLog" required>
 				</div>
 
-				<button type="submit" value="entrar">Iniciar sesión</button>
+				<button class="botonAccede" type="submit"  value="entrar">Iniciar sesión</button>
 
 			</form>
 		</div>
@@ -105,7 +105,7 @@
 					<input type="text" id="contrasenia" name="contrasenia">
 				</div>
 
-				<button type="button" onclick="validarFormulario()">Registrarse</button>
+				<button class="botonAccede" type="button" onclick="validarFormulario()">Registrarse</button>
 
 			</form>
 

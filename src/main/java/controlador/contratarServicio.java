@@ -49,7 +49,7 @@ public class contratarServicio extends HttpServlet {
 			try {
 				
 				s.crearServicio();
-				response.sendRedirect("graciasPorTuCompra.html");
+				response.sendRedirect("graciasPorSuCompra.html");
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

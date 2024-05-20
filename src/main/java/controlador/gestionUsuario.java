@@ -57,7 +57,7 @@ public class gestionUsuario extends HttpServlet {
 		String email = request.getParameter("email");
 		String fechaBoda= request.getParameter("fechaBoda");
 		String contrasenia = request.getParameter("contrasenia");
-		int permiso=9;
+		int permiso=9;	
 		
 		try {
 			

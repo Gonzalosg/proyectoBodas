@@ -38,7 +38,7 @@ import java.sql.SQLException;
 		PrintWriter out = response.getWriter();
 		int id = Integer.parseInt(request.getParameter("id"));
 		
-		
+			
 		
 			usuario u = new usuario();
 			try {

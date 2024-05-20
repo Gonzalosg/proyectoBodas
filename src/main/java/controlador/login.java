@@ -63,9 +63,9 @@ public class login extends HttpServlet {
 			if(u.logeo()) {
 				
 				sesion = request.getSession();
-				sesion.setAttribute("id", u.getId());
+			
 				sesion.setAttribute("permiso",u.getPermiso());
-				
+				sesion.setAttribute("id", u.getId());
 				response.sendRedirect("home.html");
 				
 			}else {

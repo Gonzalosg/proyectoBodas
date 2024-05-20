@@ -1,5 +1,9 @@
 package modelo;
 
+import java.sql.SQLException;
+
+import dao.daoUsuario;
+
 public class servicio {
 	int idUsuario;
 	int idServicio;
@@ -10,12 +14,26 @@ public class servicio {
 		
 	}
 	
+	
+	
+	public servicio(int idUsuario, int idServicio) {
+		super();
+		this.idUsuario = idUsuario;
+		this.idServicio = idServicio;
+	}
+
+
+
 	public servicio(int idUsuario, int idServicio, String nombreServicio, float precioServicio) {
 		super();
 		this.idUsuario = idUsuario;
 		this.idServicio = idServicio;
 		this.nombreServicio = nombreServicio;
 		this.precioServicio = precioServicio;
+	}
+	
+	public void crearServicio  () throws SQLException {
+		daoUsuario.getInstance().comprarServicio(this);
 	}
 
 

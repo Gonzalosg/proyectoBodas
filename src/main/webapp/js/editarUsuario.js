@@ -1,7 +1,7 @@
-				
+					
 		
 		var urlParams = new URLSearchParams(window.location.search);
-			var id = urlParams.get('id');
+			var id = urlParams.get('id');	
 			
 		function obtenerPermisoUsuario() {
    		 fetch('checkLogin')
@@ -18,7 +18,7 @@
 			actualizarNavbar(permiso);
 			
             console.log('El permiso del usuario es:', permiso);
-            // Puedes hacer algo con el permiso aquí
+           
         })
         .catch(error => {
             console.error('Error:', error);

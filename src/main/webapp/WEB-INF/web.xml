@@ -79,4 +79,24 @@
     <servlet-name>logout</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>comprarServicio</display-name>
+    <servlet-name>comprarServicio</servlet-name>
+    <servlet-class>controlador.comprarServicio</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>comprarServicio</servlet-name>
+    <url-pattern>/comprarServicio</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>contratarServicio</display-name>
+    <servlet-name>contratarServicio</servlet-name>
+    <servlet-class>controlador.contratarServicio</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>contratarServicio</servlet-name>
+    <url-pattern>/contratarServicio</url-pattern>
+  </servlet-mapping>
 </web-app>

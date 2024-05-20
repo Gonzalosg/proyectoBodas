@@ -13,7 +13,7 @@ function obtenerPermisoUsuario() {
 			actualizarNavbar(permiso);
 			
             console.log('El permiso del usuario es:', permiso);
-            // Puedes hacer algo con el permiso aquí
+            
         })
         .catch(error => {
             console.error('Error:', error);
@@ -34,7 +34,7 @@ function obtenerPermisoUsuario() {
         		
        			elementoAccede.innerHTML= "admin";
        			elementoAccede.href= "galeriaUsuarios.html"
-        
+        		debugger;
     		}if (permiso!=null){
 				elementoLogOut.style.display="inline";
 				

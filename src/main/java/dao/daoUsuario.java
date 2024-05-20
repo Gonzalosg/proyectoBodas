@@ -65,7 +65,7 @@ public class daoUsuario {
 		ps.setString(6,u.getHashContrasenia());
 		ps.setInt(7,u.getPermiso());
 		
-		int filas = ps.executeUpdate();
+		ps.executeUpdate();
 		ps.close();
 	}
 	
@@ -82,7 +82,7 @@ public class daoUsuario {
 		ps.setInt(7,u.getPermiso());
 		ps.setInt(8, u.getId());
 		
-		int filas = ps.executeUpdate();
+		ps.executeUpdate();
 		ps.close();		
 	}
 	
@@ -90,9 +90,11 @@ public class daoUsuario {
 		String sql = "delete from usuario where id=?";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setInt(1, id);
-		int filas = ps.executeUpdate();
+		ps.executeUpdate();
 		ps.close();
 	}
+	
+	
 	
 	public ArrayList <usuario> listar () throws SQLException{
 		String sql = "SELECT * from usuario";
@@ -133,7 +135,7 @@ public class daoUsuario {
 		ps.setString(1, u.getEmail());
 		ps.setString(2, u.getHashContrasenia());	
 		
-		ResultSet rs = ps.executeQuery();
+		ResultSet rs = ps.executeQuery();	
 		usuario aux=null;
 		
 		if(rs.next()) {
@@ -154,6 +156,21 @@ public class daoUsuario {
 		
 		
 		return json;
+	}
+	
+
+	
+	
+	public void comprarServicio (servicio u) throws SQLException {
+		String sql = "INSERT INTO tienda (idCliente, idServicio) VALUES (?,?)";
+		PreparedStatement ps = con.prepareStatement(sql);
+		
+		ps.setInt(1, u.getIdUsuario() );
+		ps.setInt(2,u.getIdServicio());
+		
+		ps.executeUpdate();
+		ps.close();
+		
 	}
 
 	

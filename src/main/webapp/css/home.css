@@ -34,9 +34,7 @@ body{
     width: 99.75%;
     height: 950px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color:rgb(198, 145, 132);
+  	background-color:rgb(198, 145, 132);
     overflow: hidden;
     border: solid   rgb(198, 145, 132);
     

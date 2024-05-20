@@ -18,12 +18,14 @@ public class usuario {
 	private String fechaBoda;
 	private String hashContrasenia;
 	private int permiso;
-	private servicio servicio;
+	private int servicio;
 	
 	public usuario() {
 		
 	}
-
+	/*
+	 * 
+	 */
 	public usuario(int id, String nombre, String apellido1, String apellido2, String email, String fechaBoda,
 			String hashContrasenia, int permiso) {
 		super();
@@ -95,7 +97,7 @@ public class usuario {
 			this.setFechaBoda(aux.getFechaBoda());
 			this.setHashContrasenia(aux.getHashContrasenia());
 			this.setPermiso(aux.getPermiso());
-			System.out.println(aux);
+			
 			ok=true;
 		}
 		
@@ -127,6 +129,8 @@ public class usuario {
             throw new RuntimeException(e);
         }
     }
+	
+	
 
 	public int getId() {
 		return id;
@@ -191,23 +195,21 @@ public class usuario {
 	public void setPermiso(int permiso) {
 		this.permiso = permiso;
 	}
-	
-	
-
-	public servicio getServicio() {
+	public int getServicio() {
 		return servicio;
 	}
-
-	public void setServicio(servicio servicio) {
+	public void setServicio(int servicio) {
 		this.servicio = servicio;
 	}
-
 	@Override
 	public String toString() {
 		return "usuario [id=" + id + ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2
-				+ ", email=" + email + ", fechaBoda=" + fechaBoda + ", contrasenia=" + hashContrasenia + ", permiso="
-				+ permiso + "]";
+				+ ", email=" + email + ", fechaBoda=" + fechaBoda + ", hashContrasenia=" + hashContrasenia
+				+ ", permiso=" + permiso + ", servicio=" + servicio + "]";
 	}
+	
+	
+
 
 	
 	

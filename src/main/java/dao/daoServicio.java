@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 import modelo.servicio;
 
-public class daoServicio {
+	public class daoServicio {
 
 	private Connection con = null;
 	private static daoServicio instance = null;
@@ -17,7 +17,7 @@ public class daoServicio {
 		}
 	}
 	
-public static daoServicio getInstance() throws SQLException {
+	public static daoServicio getInstance() throws SQLException {
 		
 		if(instance==null) {
 			instance = new daoServicio();

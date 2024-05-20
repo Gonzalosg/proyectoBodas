@@ -6,10 +6,12 @@
 			.then(data=> pintarTabla(data))
 		}
 		
+	
 		
 		function obtenerPermisoUsuario() {
    		 fetch('checkLogin')
         .then(response => {
+			
             if (!response.ok) {
 				
                 throw new Error('Error al obtener el permiso del usuario');
@@ -33,6 +35,7 @@
 		
 	
 	
+      
        function actualizarNavbar(permiso) {
     	
     	var elementoAccede = document.getElementById("accede");
@@ -43,7 +46,7 @@
        			elementoAccede.innerHTML= "admin";
        			elementoAccede.href= "galeriaUsuarios.html"
         
-    		}else if (permiso){
+    		}if (permiso!=null){
 				elementoLogOut.style.display="inline";
 				
 													
@@ -52,9 +55,7 @@
       			elementoAccede.href= "Accede.html";
       			elementoLogOut.style.display = "none";    		}	
 		}
-
-
-	
+		
 		
 		function eliminar (id){
 			if(confirm("¿Seguro que quieres eliminar los datos?")){
@@ -63,8 +64,6 @@
 				.then(data=> pintarTabla(data))
 			}
 		
-			
-			
 		}
 		
 		
@@ -105,12 +104,7 @@
 		
 		}
 		
-		/*window.onload = function(){
-			llamada();
-			 obtenerPermisoUsuario()
-			
-        	
-		}*/
+	
 		document.addEventListener("DOMContentLoaded",function(){
 		
 			llamada()

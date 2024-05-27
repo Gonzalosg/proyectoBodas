@@ -33,7 +33,49 @@ function obtenerPermisoUsuario() {
 var permiso = obtenerPermisoUsuario()
 
 
+function obtenerServicioUsuario() {
+	fetch('checkServicio')
+		.then(response => {
 
+			if (!response.ok) {
+
+				throw new Error('Error al obtener el servicio del usuario');
+			}
+		
+			return response.text();
+		})
+		.then(servicio => {
+			
+			actualizarNavbarTienda(servicio);
+			console.log(servicio);
+
+		})
+		.catch(error => {
+			console.error('Error:', error);
+		});
+}
+
+var servicio = obtenerServicioUsuario()
+
+function actualizarNavbarTienda(servicio) {
+
+	var elementoTienda = document.getElementById("tienda");
+	
+	
+
+	if (servicio==0) {
+
+		elementoTienda.innerHTML = "Shop";
+		elementoTienda.href = "tienda.html"
+		
+
+	} else  {
+
+		elementoTienda.innerHTML = "Tu Carro";
+		elementoTienda.href = "galeriaTienda.html";
+
+	}
+}
 
 
 function actualizarNavbar(permiso) {
@@ -44,7 +86,7 @@ function actualizarNavbar(permiso) {
 
 	if (permiso == 1) {
 
-		elementoAccede.innerHTML = "admin";
+		elementoAccede.innerHTML = "Admin";
 		elementoAccede.href = "galeriaUsuarios.html"
 		elementoLogOut.style.display = "inline";
 

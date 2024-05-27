@@ -40,16 +40,22 @@ public class contratarServicio extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession sesion = request.getSession(false);
-		int idUsuario=0;
+		int idUsuario;
 		if (sesion!=null) {
 			idUsuario =(int) sesion.getAttribute("id");
 			int opcionServicio = Integer.parseInt(request.getParameter("boton"));
 			
 			servicio s = new servicio(idUsuario,opcionServicio);
+			
 			try {
+				int existe = s.checkServicio(idUsuario);
+				if(existe==0) {
+					s.crearServicio();
+					response.sendRedirect("graciasPorSuCompra.html");
+				}else {
+					response.sendRedirect("home.html");
+				}
 				
-				s.crearServicio();
-				response.sendRedirect("graciasPorSuCompra.html");
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

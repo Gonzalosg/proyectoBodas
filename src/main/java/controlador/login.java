@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import modelo.servicio;
 import modelo.usuario;
 
 import java.io.IOException;
@@ -63,10 +64,13 @@ public class login extends HttpServlet {
 			if(u.logeo()) {
 				
 				sesion = request.getSession();
-			
+				servicio s = new servicio();
+				int existeServicio = s.checkServicio(u.getId());
+				sesion.setAttribute("existeServicio", existeServicio);
 				sesion.setAttribute("permiso",u.getPermiso());
 				sesion.setAttribute("id", u.getId());
 				response.sendRedirect("home.html");
+			
 				
 			}else {
 				response.sendRedirect("Accede.html"); 

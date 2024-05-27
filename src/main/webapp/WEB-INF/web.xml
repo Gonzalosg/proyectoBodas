@@ -99,4 +99,24 @@
     <servlet-name>contratarServicio</servlet-name>
     <url-pattern>/contratarServicio</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>listarServicios</display-name>
+    <servlet-name>listarServicios</servlet-name>
+    <servlet-class>controlador.listarServicios</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>listarServicios</servlet-name>
+    <url-pattern>/listarServicios</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>checkServicio</display-name>
+    <servlet-name>checkServicio</servlet-name>
+    <servlet-class>controlador.checkServicio</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>checkServicio</servlet-name>
+    <url-pattern>/checkServicio</url-pattern>
+  </servlet-mapping>
 </web-app>

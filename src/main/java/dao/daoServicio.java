@@ -17,8 +17,8 @@ import modelo.servicio;
 	private Connection con = null;
 	private static daoServicio instance = null;
 	/**
-	 * método que nos conecta con la Base de datos llamando al método getConnection de la clase ConexionBD, si la conexion es nula, establece una nueva conexión.
-	 * @throws SQLException: lanza un error tipo SQL si hubiese algún error conectando a la BBDD
+	 * metodo que nos conecta con la Base de datos llamando al metodo getConnection de la clase ConexionBD, si la conexion es nula, establece una nueva conexión.
+	 * @throws SQLException lanza un error tipo SQL si hubiese algun error conectando a la BBDD
 	 */
 	public daoServicio() throws SQLException {
 		if(con==null) {
@@ -59,10 +59,11 @@ import modelo.servicio;
 		
 	}
 	/**
-	 * Método booleano
-	 * @param idCliente
-	 * @return
-	 * @throws SQLException
+	 * Método mediante el cual comprobamos si el idCliente ya se encuentra en nuestra tabla tienda, para poder restringir que un usuario no
+	 * pueda contratar más de un servicio.
+	 * @param idCliente atributo de nuestra tabla tienda que identifica al usuario que ha contratado un servicio.
+	 * @return contador número de veces que ha salido idCliente de la tabla tienda.
+	 * @throws SQLException lanza un error tipo SQL si hubiese algun error conectando a la BBDD
 	 */
 	public int checkServicio (int idCliente) throws SQLException {
 		
@@ -82,7 +83,12 @@ import modelo.servicio;
 		
 		
 	}
-	
+	/**
+	 * Método que nos permite listar los servicios que tiene contratados un usuario y que se mostraran en su carro.
+	 * @param idCliente atributo de nuestra tabla tienda que identifica al usuario que ha contratado un servicio.
+	 * @return s devuelve el objeto servicio relleno con los datos de la dicha tabla que corresponden con el idCliente solicitado
+	 * @throws SQLException lanza un error tipo SQL si hubiese algun error conectando a la BBDD
+	 */
 	public servicio listarServicio (int idCliente) throws SQLException {
 		String sql = "SELECT * FROM servicio WHERE idServicio in (SELECT idServicio FROM tienda WHERE idCliente =?)";
 		PreparedStatement ps = con.prepareStatement(sql);
@@ -98,6 +104,12 @@ import modelo.servicio;
 		
 	}
 	
+	/**
+	 * Método que devuelve en formato Json el objeto que recogemos por id para poder pintarlo en el html.
+	 * @param id atributo unico del usuario que lo identifica como dueño del servicio contratado
+	 * @return json devuelve el objeto en formato json
+	 * @throws SQLException lanza un error tipo SQL si hubiese algun error conectando a la BBDD
+	 */
 	public String listarJson (int id) throws SQLException {
 		String json = "";
 		Gson gson = new Gson ();

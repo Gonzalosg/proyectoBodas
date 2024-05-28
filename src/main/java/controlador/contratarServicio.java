@@ -53,13 +53,15 @@ public class contratarServicio extends HttpServlet {
 					s.crearServicio();
 					response.sendRedirect("graciasPorSuCompra.html");
 				}else {
-					response.sendRedirect("home.html");
+					response.sendRedirect("ServicioYaContratado.html");
 				}
 				
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}else {
+			response.sendRedirect("home.html");
 		}
 		
 		

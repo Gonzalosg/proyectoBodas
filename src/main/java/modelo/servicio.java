@@ -91,6 +91,13 @@ public class servicio {
 		daoServicio.getInstance().comprarServicio(this);
 	}
 	
+	/**
+	 * Método que mediante el uso del patrón Singleton llama a la clase daoServicio, conecta con la base de datos y comprueba que
+	 * idUsuario no se encuentre ya en la tabla servicios de la base de datos.
+	 * @param idUsuario atributo unico que identifica al usuario como contratador de un servicio de la tienda
+	 * @return devuelve el propio método checkServicio
+	 * @throws SQLException lanza un error tipo SQL si hubiese algun error conectando a la BBDD
+	 */
 	public int checkServicio (int idUsuario) throws SQLException {
 		return  daoServicio.getInstance().checkServicio(idUsuario);
 	}

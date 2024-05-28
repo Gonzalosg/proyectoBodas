@@ -181,7 +181,7 @@ public class daoUsuario {
 
 	/**
 	 * Método que devuelve en formato Json todos los objetos usuarios recogidos por el método listar
-	 * @return devuelve la lista en formato Json
+	 * @return json devuelve la lista en formato Json
 	 * @throws SQLException lanza un error tipo SQL si hubiese algun error conectando a la BBDD
 	 */
 	public String listarJson () throws SQLException {

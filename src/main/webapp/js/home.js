@@ -75,7 +75,7 @@ function actualizarNavbar(permiso) {
 
 	if (permiso == 1) {
 
-		elementoAccede.innerHTML = "admin";
+		elementoAccede.innerHTML = "Admin";
 		elementoAccede.href = "galeriaUsuarios.html"
 		elementoLogOut.style.display = "inline";
 

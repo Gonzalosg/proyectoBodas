@@ -25,6 +25,8 @@ function obtenerPermisoUsuario() {
 			console.error('Error:', error);
 		});
 }
+
+
 function obtenerServicioUsuario() {
 	fetch('checkServicio')
 		.then(response => {
@@ -33,7 +35,7 @@ function obtenerServicioUsuario() {
 
 				throw new Error('Error al obtener el servicio del usuario');
 			}
-			console.log(response.text)
+		
 			return response.text();
 		})
 		.then(servicio => {
@@ -47,8 +49,8 @@ function obtenerServicioUsuario() {
 		});
 }
 
-var servicio = obtenerServicioUsuario()
-var permiso = obtenerPermisoUsuario()
+
+
 
 function pintarTabla(datos) {
 
@@ -77,29 +79,31 @@ function pintarTabla(datos) {
 
 }
 
-function obtenerServicioUsuario() {
-	fetch('checkServicio')
-		.then(response => {
 
-			if (!response.ok) {
-
-				throw new Error('Error al obtener el servicio del usuario');
-			}
-		
-			return response.text();
-		})
-		.then(servicio => {
-			
-			actualizarNavbarTienda(servicio);
-			console.log(servicio);
-
-		})
-		.catch(error => {
-			console.error('Error:', error);
-		});
-}
 
 var servicio = obtenerServicioUsuario()
+var permiso = obtenerPermisoUsuario()
+
+function actualizarNavbar(permiso) {
+
+	var elementoAccede = document.getElementById("accede");
+	var elementoLogOut = document.getElementById("logout");
+
+
+	if (permiso == 1) {
+
+		elementoAccede.innerHTML = "Admin";
+		elementoAccede.href = "galeriaUsuarios.html"
+		elementoLogOut.style.display = "inline";
+
+	} else if (permiso == 9) {
+		elementoLogOut.style.display = "inline";
+		elementoAccede.innerHTML = "Edita";
+
+	} else {
+		;
+	}
+}
 
 function actualizarNavbarTienda(servicio) {
 

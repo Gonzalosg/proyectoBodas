@@ -119,4 +119,14 @@
     <servlet-name>checkServicio</servlet-name>
     <url-pattern>/checkServicio</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>listarUsuario</display-name>
+    <servlet-name>listarUsuario</servlet-name>
+    <servlet-class>controlador.listarUsuario</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>listarUsuario</servlet-name>
+    <url-pattern>/listarUsuario</url-pattern>
+  </servlet-mapping>
 </web-app>

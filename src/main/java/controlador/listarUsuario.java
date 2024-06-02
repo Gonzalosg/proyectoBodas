@@ -6,28 +6,24 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import modelo.usuario;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
-
 import dao.daoUsuario;
 
 /**
- * Servlet implementation class gestionUsuario
+ * Servlet implementation class listarUsuario
  */
-public class gestionUsuario extends HttpServlet {
+public class listarUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	HttpSession sesion;
 	
+	HttpSession sesion;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public gestionUsuario() {
+    public listarUsuario() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,48 +32,32 @@ public class gestionUsuario extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		sesion = request.getSession();
+		int permisoSesion = (int) sesion.getAttribute("permiso");
+		int idUsu = (int) sesion.getAttribute("id");
 		
 		
-	
+		if(permisoSesion==9) {
+			String respuestaJson ="";	
+			PrintWriter respuesta = response.getWriter();
+				
+			
+					try {
+							respuestaJson = daoUsuario.getInstance().listarUsuJson(idUsu);
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						respuesta.print(respuestaJson);
+			}
 		
+		}
 		
-		
-	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		
-		String nombre = request.getParameter("nombre");
-		String apellido1 = request.getParameter("apellido1");
-		String apellido2 = request.getParameter("apellido2");
-		String email = request.getParameter("email");
-		String fechaBoda= request.getParameter("fechaBoda");
-		String contrasenia = request.getParameter("contrasenia");
-		int permiso=9;	
-		
-		try {
-			
-		    String myHash = usuario.getMD5(contrasenia);
-		    usuario u = new usuario(nombre, apellido1, apellido2, email, fechaBoda,myHash, permiso);
-			
-			u.insertar();
-			response.sendRedirect("graciasPorRegistrarse.html");
-			
-		    
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	
-	
-		
-		
-		
 		
 	}
 

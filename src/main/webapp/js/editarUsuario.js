@@ -87,6 +87,7 @@ function actualizarNavbar(permiso) {
 	} else if (permiso == 9) {
 		elementoLogOut.style.display = "inline";
 		elementoAccede.innerHTML = "Edita";
+		elementoAccede.href="datosUsu.html"
 
 	} else {
 		;
@@ -134,7 +135,7 @@ function pintarFormulario(datos) {
             </div>
            
            
-            <a href='galeriaUsuarios.html?id="+datos[i].id+"'><button id"botonEditar" type="submit">Editar</button></a>
+            <a href='galeriaUsuarios.html?id="+datos[i].id+"'><button id="botonEditar" type="submit">Editar</button></a>
 
         </form>`
 

@@ -3,46 +3,29 @@
 	padding: 0%;
 }
 
-.listado {
-	width: 80%;
-	height: 400px;
-	background-color: rgb(65, 14, 14);
-
-
-}
-.datosUsu{
-	width: 70%;
-	height: 400px;
-	background-color: rgb(65, 14, 14);
-}
-
-.espacioTabla {
-	width: 100%;
-	height: 600px;
-	background-color: rgb(65, 14, 14);
+.espacioVideos {
 	display: flex;
-	align-items: flex-start;
-	justify-content: center;
-	
-
-
-}
-
-.carrito {
-	width: 100%;
-	height: 600px;
-	background-color: rgb(65, 14, 14);
-	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	margin-top: 1%;
+	gap: 30px;
+	background-color: rgb(65, 14, 14);
+	width: 30%;
+	min-height: 800px;
+	margin-left: 900px;
 
+}
 
+.videos {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background-color: rgb(198, 145, 132);
 }
 
 header {
 	background-color: rgb(65, 14, 14);
-	padding-top: 20px;
-	height: 100px;
 	margin-right: 5%;
 	margin-left: 5%;
 	height: 80px;
@@ -51,21 +34,14 @@ header {
 }
 
 body {
-
+	margin-top: 20px;
 	background-color: rgb(65, 14, 14);
 	width: 100%;
 	height: 100%;
-
 }
 
 .title {
 	background-color: rgb(65, 14, 14);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 200px;
-	font-size: 50px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -98,45 +74,10 @@ nav ul {
 	text-align: center;
 }
 
-table {
-	width: 90%;
-	border-collapse: collapse;
-	border-spacing: 0;
+.videos {
+	width: 100%;
+	height: 100%px;
 	background-color: rgb(198, 145, 132);
-	text-align: center;
-	border: 4px solid rgb(0, 0, 0);
-	border-radius: 10px;
-
-}
-
-.listado {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-}
-.listadoTienda {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	
-
-}
-
-th,td {
-	padding: 12px;
-	text-align: left;
-	border-bottom: 1px solid #ddd;
-}
-
-th {
-	background-color: rgb(198, 145, 132);
-	color: #333;
-	text-transform: uppercase;
-}
-
-tr:hover {
-	background-color: #f5f5f5;
 }
 
 .botonOut {
@@ -148,5 +89,8 @@ tr:hover {
 	background-color: rgb(198, 145, 132);
 	border-radius: 5px;
 	cursor: pointer;
+	display: none;
+
 
 }
+     

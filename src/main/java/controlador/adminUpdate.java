@@ -63,7 +63,8 @@ import java.sql.SQLException;
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+			sesion = request.getSession();
+			int permisoSesion = (int) sesion.getAttribute("permiso");
 
 			String nombre = request.getParameter("nombre");
 			String apellido1 = request.getParameter("apellido1");
@@ -76,13 +77,22 @@ import java.sql.SQLException;
 			
 			try {
 				
+				if(permisoSesion==1) {
+					 String myHash = usuario.getMD5(contrasenia);
+					    usuario u = new usuario(nombre, apellido1, apellido2, email, fechaBoda,myHash, permiso);
+						
+						u.setId(id);
+						u.update();
+						response.sendRedirect("galeriaUsuarios.html");
+				}else {
+					 String myHash = usuario.getMD5(contrasenia);
+					    usuario u = new usuario(nombre, apellido1, apellido2, email, fechaBoda,myHash, permiso);
+						
+						u.setId(id);
+						u.update();
+						response.sendRedirect("datosUsu.html");
+				}
 			   
-			    String myHash = usuario.getMD5(contrasenia);
-			    usuario u = new usuario(nombre, apellido1, apellido2, email, fechaBoda,myHash, permiso);
-				
-				u.setId(id);
-				u.update();
-				response.sendRedirect("galeriaUsuarios.html");
 			
 			    
 			} catch (Exception e) {

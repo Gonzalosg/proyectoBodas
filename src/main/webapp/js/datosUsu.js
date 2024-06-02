@@ -1,6 +1,15 @@
+function llamada() {
+	fetch('listarUsuario')
+		.then(response => response.json())
+		.then(data => pintarTabla(data))
+}
+
+
+
 function obtenerPermisoUsuario() {
 	fetch('checkLogin')
 		.then(response => {
+
 			if (!response.ok) {
 
 				throw new Error('Error al obtener el permiso del usuario');
@@ -12,7 +21,6 @@ function obtenerPermisoUsuario() {
 
 			actualizarNavbar(permiso);
 
-			console.log('El permiso del usuario es:', permiso);
 
 		})
 		.catch(error => {
@@ -21,7 +29,6 @@ function obtenerPermisoUsuario() {
 }
 
 var permiso = obtenerPermisoUsuario()
-
 
 
 function obtenerServicioUsuario() {
@@ -72,8 +79,8 @@ function actualizarNavbarTienda(servicio) {
 function actualizarNavbar(permiso) {
 
 	var elementoAccede = document.getElementById("accede");
-	var elementoLogOut = document.getElementById("logout");
-
+	var elementoLogOut = document.getElementById("logOut");
+	elementoLogOut.style.display = "none";
 
 	if (permiso == 1) {
 
@@ -93,50 +100,51 @@ function actualizarNavbar(permiso) {
 
 
 
-function validarFormulario() {
-	let nombre = document.getElementById('nombre').value;
-	let apellido1 = document.getElementById('apellido1').value;
-	let apellido2 = document.getElementById('apellido2').value;
-	let email = document.getElementById('email').value;
-	let fechaBoda = document.getElementById('fechaBoda').value;
-	let contrasenia = document.getElementById('contrasenia').value;
 
-	let valido = true;
 
-	if (nombre == "") {
-		valido = false;
-		document.getElementById('nombre').style.background = 'red';
-	}
 
-	if (apellido1 == "") {
-		valido = false;
-		document.getElementById('apellido1').style.background = 'red';
-	}
 
-	if (apellido2 == "") {
-		valido = false;
-		document.getElementById('apellido2').style.background = 'red';
-	}
+function pintarTabla(datos) {
 
-	if (email == "") {
-		valido = false;
-		document.getElementById('email').style.background = 'red';
-	}
+	let html = `
+            <table><tr>
+                   
+                    <th>Nombre</th>
+                    <th>Apellido 1</th>
+                    <th>Apellido 2</th>
+                    <th>Email</th>
+                    <th>Fecha de Boda</th>
+                   
+                </tr>`;
 
-	if (fechaBoda == "") {
-		valido = false;
-		document.getElementById('fechaBoda').style.background = 'red';
-	}
 
-	if (contrasenia == "") {
-		valido = false;
-		document.getElementById('contrasenia').style.background = 'red';
-	}
 
-	if (valido == true) {
-		document.getElementById("registro").submit();
-	}
+	
+	html += "<td>" + datos.nombre + "</td>"
+	html += "<td>" + datos.apellido1 + "</td>"
+	html += "<td>" + datos.apellido2 + "</td>"
+	html += "<td>" + datos.email + "</td>"
+	html += "<td>" + datos.fechaBoda + "</td>"
+	
+	html += "<td><a href='editarUsuario.html?id=" + datos.id + "'>Editar</a></td><td><a href='javascript:eliminar(" + datos.id + ")'>Eliminar</a></td>"
+
+	html += "</tr>"
+
+
+	html += "</table>";
+
+
+
+	document.getElementById("datosUsu").innerHTML = html;
+
 
 }
 
+
+document.addEventListener("DOMContentLoaded", function() {
+
+	llamada()
+
+
+})
 

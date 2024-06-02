@@ -41,9 +41,6 @@ public class adminRU extends HttpServlet {
 		int permisoSesion = (int) sesion.getAttribute("permiso");
 		
 		
-		
-		System.out.println(permisoSesion);
-		
 		if(permisoSesion==1) {
 			String respuestaJson ="";	
 			PrintWriter respuesta = response.getWriter();

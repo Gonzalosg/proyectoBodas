@@ -193,6 +193,16 @@ public class daoUsuario {
 
 		return json;
 	}
+	
+	public String listarUsuJson(int id) throws SQLException {
+		String json = "";
+		Gson gson = new Gson ();
+
+		json = gson.toJson(this.obtenerPorId(id));
+
+
+		return json;
+	}
 
 
 

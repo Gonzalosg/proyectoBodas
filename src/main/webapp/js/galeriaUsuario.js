@@ -93,6 +93,7 @@ function actualizarNavbar(permiso) {
 	} else if (permiso == 9) {
 		elementoLogOut.style.display = "inline";
 		elementoAccede.innerHTML = "Edita";
+		elementoAccede.href="datosUsu.html"
 
 	} else {
 		;

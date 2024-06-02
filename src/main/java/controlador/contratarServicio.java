@@ -39,7 +39,7 @@ public class contratarServicio extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession sesion = request.getSession(false);
+		sesion = request.getSession();
 		int idUsuario;
 		if (sesion!=null) {
 			idUsuario =(int) sesion.getAttribute("id");
